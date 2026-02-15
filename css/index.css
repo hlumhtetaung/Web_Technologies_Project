@@ -27,7 +27,7 @@ body {
     display: none;
 }
 
-/* 3. Sidebar (Sidenav) */
+/* 3. Sidebar */
 .sidenav {
     height: 100%;
     width: var(--sidebar-width);
@@ -37,15 +37,12 @@ body {
     background-color: var(--bg-surface);
     transform: translateX(-100%);
     transition: transform var(--nav-speed) var(--ease-out);
-    z-index: 100; /* Increased to stay above header */
     box-shadow: 5px 0 20px rgba(0,0,0,0.4);
-    
-    /* Links start at the very top */
     padding-top: 0; 
 }
 
 .sidenav a {
-    padding: 16px 25px; /* Balanced padding */
+    padding: 16px 25px;
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
@@ -63,7 +60,8 @@ body {
 
 /* 4. Header & Content Layout */
 .header, 
-.main-content {
+.main-content,
+.footer {
     transition: margin-left var(--nav-speed) var(--ease-out);
 }
 
@@ -75,8 +73,9 @@ body {
     padding: 0 20px;
     gap: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-    position: relative;
-    z-index: 10;
+    position: sticky;
+    top: 0;
+    z-index: 90; /* Added this to ensure header stays above the contents */
 }
 
 .main-content {
@@ -113,7 +112,8 @@ body {
 }
 
 #nav-toggle:checked ~ .header,
-#nav-toggle:checked ~ .main-content {
+#nav-toggle:checked ~ .main-content,
+#nav-toggle:checked ~ .footer {
     margin-left: var(--sidebar-width);
 }
 
@@ -151,4 +151,82 @@ body {
 .game-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 8px 25px rgba(182, 116, 226, 0.6);
+}
+
+/* 8. Story Games CSS Section */
+.story-games {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: left;
+    margin-top: 40px;
+}
+
+.story-game-card {
+    background-color: var(--bg-surface);
+    border-radius: 10px;
+    padding: 20px;
+    width: 670px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.story-game-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(182, 116, 226, 0.6);
+}
+
+.story-game-icon{
+    border-radius: 10px;
+    width: 600px;
+    height: 450px;
+}
+
+/* 9. Footer */
+.footer {
+    background-color: whitesmoke;
+    padding: 40px 80px;
+    font-family: Arial, sans-serif;
+    color: #000;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.brand-title, .contact-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.footer-brand p {
+    margin: 5px 0;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links svg {
+    width: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-links svg:hover {
+    transform: scale(1.2);
+    transform: translateY(-3px);
 }

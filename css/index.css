@@ -1,0 +1,154 @@
+/* 1. Theme Configuration & Reset */
+:root {
+    --primary: #3B82F6;
+    --bg-deep: #0F172A;
+    --bg-surface: #1E293B;
+    --text-main: #E2E8F0;
+    --text-dim: #CBD5E1;
+    --sidebar-width: 250px;
+    --nav-speed: 0.4s;
+    --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-deep);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* 2. Hidden Toggle */
+#nav-toggle {
+    display: none;
+}
+
+/* 3. Sidebar (Sidenav) */
+.sidenav {
+    height: 100%;
+    width: var(--sidebar-width);
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-surface);
+    transform: translateX(-100%);
+    transition: transform var(--nav-speed) var(--ease-out);
+    z-index: 100; /* Increased to stay above header */
+    box-shadow: 5px 0 20px rgba(0,0,0,0.4);
+    
+    /* Links start at the very top */
+    padding-top: 0; 
+}
+
+.sidenav a {
+    padding: 16px 25px; /* Balanced padding */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-dim);
+    display: block;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidenav a:hover {
+    background-color: var(--primary);
+    color: white;
+    padding-left: 35px;
+}
+
+/* 4. Header & Content Layout */
+.header, 
+.main-content {
+    transition: margin-left var(--nav-speed) var(--ease-out);
+}
+
+.header {
+    background-color: var(--bg-surface);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    position: relative;
+    z-index: 10;
+}
+
+.main-content {
+    padding: 40px;
+}
+
+/* 5. UI Elements */
+.menu-label {
+    width: 45px;
+    height: 45px;
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+
+.menu-label:hover {
+    background-color: rgba(59, 130, 246, 0.2);
+    transform: scale(1.05);
+}
+
+.sapphire-logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* 6. Interaction Logic */
+#nav-toggle:checked ~ .sidenav {
+    transform: translateX(0);
+}
+
+#nav-toggle:checked ~ .header,
+#nav-toggle:checked ~ .main-content {
+    margin-left: var(--sidebar-width);
+}
+
+/* 7. Mini-Games CSS section */
+
+.mini-games {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: left;
+    margin-top: 40px;
+}
+
+.game-card {
+    background-color: var(--bg-surface);
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card img{
+    border-radius: 10px;
+    width: 200px;
+    height: 180px;
+}
+
+.game-icon {
+    width: 100%;
+    height: auto;
+}
+
+.game-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(182, 116, 226, 0.6);
+}

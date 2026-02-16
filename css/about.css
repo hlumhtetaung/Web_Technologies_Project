@@ -1,0 +1,33 @@
+.about-content h1 {
+    text-align: right;
+}
+
+#components img {
+    width: 40%;
+    height: auto;
+    border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+}
+
+#components {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.about-content .founder-image {
+    border: 25px solid #57e5ed;
+    box-shadow: 0 0 15px 2px #57e5ed;
+}
+
+.about-content p {
+    text-align: justify;
+    font-size: 18px;
+    font-family: 'Poppins', 'Nunito', 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.about-content .mission-image {
+    border: 25px solid #f461e8;
+    box-shadow: 0 0 15px 2px #f461e8;
+}

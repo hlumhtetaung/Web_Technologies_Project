@@ -1,0 +1,74 @@
+/* Huge Game View Styling */
+.game-view {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.game-card-large {
+    width: 100%;
+    max-width: 1200px;
+    background: #1a233a; /* Dark background matching your image */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.game-image-container {
+    background: white; /* Matches the stickman background */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.main-game-img {
+    width: 150%;
+    height: auto;
+}
+
+/* Mini Full-Width Bar */
+.next-game-strip {
+    width: 100%;
+    height: 100px;
+    background: #19284b;
+    border-top: 2px solid #3B82F6;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.strip-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    text-decoration: none;
+    color: white;
+    justify-content: space-between;
+}
+
+.strip-flex {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.strip-thumb {
+    height: 50px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.strip-label {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: #3B82F6;
+    font-weight: bold;
+}
+
+.strip-text p:hover {
+    text-decoration: underline;
+}
+
+.strip-text h3 { margin: 0; font-size: 1rem; }
+.strip-text p { margin: 0; font-size: 0.8rem; opacity: 0.7; }

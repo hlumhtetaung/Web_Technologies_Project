@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini Games - Sapphire Fun 💎</title>
+    <title>Fun Facts - Sapphire Fun 💎</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/mini-games.css">
+    <link rel="stylesheet" href="../css/fun-fact.css">
 </head>
 
 <body>
@@ -40,19 +40,17 @@
     </header>
 
     <div class="main-content">
-        <h2>Mini-Games</h2>
-        <div class="mini-games">
-            <div class="game-card">
-                <img src="../images/tictactoe.png" alt="Tic Tac Toe Icon" class="game-icon">
-            </div>
-            <div class="game-card">
-                <img src="../images/wordle.png" alt="Wordle Icon" class="game-icon">
-            </div>
-            <div class="game-card">
-                <img src="../images/whack.png" alt="Whack-a-Mole Icon" class="game-icon">
-            </div>
-            <div class="game-card">
-                <img src="../images/reaction.png" alt="Reaction Test" class="game-icon">
+        <div class="fact-interface">
+            <button id="random-fact-btn">✨ Surprise Me</button>
+        </div>
+
+        <div class="fact-container" id="fact-grid">
+        </div>
+
+        <div id="fact-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div id="modal-body"></div>
             </div>
         </div>
     </div>
@@ -99,6 +97,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="../javascript/fun-fact.js"></script>
 </body>
 
 </html>

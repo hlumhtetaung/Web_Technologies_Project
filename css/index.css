@@ -34,6 +34,15 @@
     box-shadow: 0 8px 25px rgba(182, 116, 226, 0.6);
 }
 
+.game-card a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.game-card a:hover {
+    text-decoration: underline;
+}
+
 /* Story Games CSS Section */
 .story-games {
     display: flex;
@@ -64,3 +73,11 @@
     height: 450px;
 }
 
+.story-game-card a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.story-game-card a:hover {
+    text-decoration: underline;
+}

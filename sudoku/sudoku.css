@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+hr { width: 500px; }
+
+#errors { color: coral; font-size: 24px; }
+
+#board {
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid black; /* Outer border */
+}
+
+.tile {
+    width: 48px;
+    height: 48px;
+    border: 1px solid lightgray;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Logic for 3x3 Grid Bold Borders */
+.horizontal-line { border-bottom: 3px solid black; }
+.vertical-line { border-right: 3px solid black; }
+
+/* Styling for the numbers provided at the start */
+.tile-start {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+#digits {
+    width: 500px;
+    height: 50px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.number {
+    width: 44px;
+    height: 44px;
+    border: 1px solid black;
+    margin: 2px;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.number-selected { background-color: #808080; color: white; }

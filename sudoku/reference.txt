@@ -1,0 +1,2 @@
+This sudoku is done by learning the designs functions and error system from the YouTube channel Kenny Yip Coding.
+Reference Link - https://www.youtube.com/watch?v=S4uRtTb8U-U

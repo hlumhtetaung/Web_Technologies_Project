@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Reaction Speed Test</title>
+
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background: #111;
+    color: white;
+}
+
+h1 {
+    margin-top: 40px;
+}
+
+#gameBox {
+    width: 80%;
+    height: 400px;
+    margin: 40px auto;
+    background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 12px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Reaction Speed Test</h1>
+
+<div id="gameBox">Click Play Again to start</div>
+
+<h2 id="result"></h2>
+<h3 id="best"></h3>
+
+<button onclick="startGame()">Play Again</button>
+
+<script>
+
+let gameBox = document.getElementById("gameBox");
+let result = document.getElementById("result");
+let bestDisplay = document.getElementById("best");
+
+let startTime = 0;
+let timeoutID;
+let waiting = false;
+let bestTime = null;
+
+gameBox.addEventListener("click", handleClick);
+
+function startGame() {
+
+    clearTimeout(timeoutID);
+
+    gameBox.style.background = "red";
+    gameBox.innerText = "Wait for green...";
+    result.innerText = "";
+    waiting = true;
+
+    let randomDelay = Math.floor(Math.random() * 3000) + 2000;
+
+    timeoutID = setTimeout(() => {
+        gameBox.style.background = "green";
+        gameBox.innerText = "CLICK!";
+        startTime = Date.now();
+        waiting = false;
+    }, randomDelay);
+}
+
+function handleClick() {
+
+    if (waiting) {
+        clearTimeout(timeoutID);
+        gameBox.innerText = "Too Soon! Click Play Again";
+        gameBox.style.background = "orange";
+        waiting = false;
+        return;
+    }
+
+    if (gameBox.style.background === "green") {
+        let reactionTime = Date.now() - startTime;
+        result.innerText = "Your time: " + reactionTime + " ms";
+
+        if (bestTime === null || reactionTime < bestTime) {
+            bestTime = reactionTime;
+            bestDisplay.innerText = "Best: " + bestTime + " ms";
+        }
+
+        gameBox.innerText = "Click Play Again";
+        gameBox.style.background = "blue";
+    }
+}
+
+</script>
+
+</body>
+</html>

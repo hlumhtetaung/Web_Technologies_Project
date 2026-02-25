@@ -15,3 +15,7 @@ https://www.youtube.com/watch?v=S4uRtTb8U-U
 
 
 
+To build memory card -
+
+https://www.youtube.com/watch?v=wz9jeI9M9hI
+

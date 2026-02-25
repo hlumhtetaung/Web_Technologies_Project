@@ -1,0 +1,26 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+#game-board {
+    height: 532px;
+    width: 475px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: 10px solid lightgrey;
+}
+
+.card-container {
+    height: 120px;
+    width: 90px;
+    margin: 2.5px;
+    cursor: pointer;
+}
+
+.card-container img {
+    height: 100%;
+    width: 100%;
+    border: 2px solid black;
+}

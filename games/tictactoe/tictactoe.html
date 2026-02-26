@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="tictactoe.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tic-Tac-Toe</h1>
+
+        <div class="scoreboard">
+            <div class="score-box">
+                <span class="score-label">Player (X)</span>
+                <span id="player-score" class="score-val">0</span>
+            </div>
+            <div class="score-box">
+                <span class="score-label">AI (O)</span>
+                <span id="ai-score" class="score-val">0</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <button id="reset-btn">Reset</button>
+        </div>
+
+        <div id="game-board" class="board"></div>
+        <h2 id="status">Your Turn!</h2>
+    </div>
+    <script src="tictactoe.js"></script>
+</body>
+
+</html>

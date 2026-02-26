@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,16 @@
     <link rel="stylesheet" href="memorycard.css">
     <script src="memorycard.js" defer></script>
 </head>
+
 <body>
     <h2>Errors: <span id="errors">0</span></h2>
+    <h2>Score: <span id="score">0</span></h2>
     <div id="game-board"></div>
+
+    <div id="message-popup" class="hidden">
+        <p>🎉 Congratulations! You matched all cards! 🎉</p>
+        <button id="play-again">Play Again</button>
+    </div>
 </body>
+
 </html>

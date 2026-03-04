@@ -1,0 +1,87 @@
+:root {
+    --car-red: #ff4757;
+    --road-gray: #2f3542;
+    --neon-green: #2ed573;
+    --sky-dark: #2c3e50;
+}
+
+body {
+    background-color: #121212;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: white;
+}
+
+#game-container {
+    position: relative;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    border: 4px solid #444;
+    border-radius: 10px;
+}
+
+#board {
+    background: linear-gradient(var(--sky-dark), #000);
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.title {
+    font-size: 50px;
+    font-weight: 900;
+    color: var(--car-red);
+    text-shadow: 3px 3px 0 #fff;
+    margin: 0;
+}
+
+.main-btn {
+    background: var(--neon-green);
+    border: none;
+    padding: 15px 45px;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 5px 0 #1e90ff;
+}
+
+.main-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #1e90ff;
+}
+
+#score-hud {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 900;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.stats-box {
+    background: white;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    min-width: 150px;
+}

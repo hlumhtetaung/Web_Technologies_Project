@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Car</title>
+    <link rel="stylesheet" href="flappycar.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="score-hud">0</div>
+
+        <canvas id="board"></canvas>
+        
+        <div id="home-screen" class="overlay">
+            <h1 class="title">Flappy<br>Car</h1>
+            <div class="car-icon">🚗</div>
+            <button id="start-btn" class="main-btn">DRIVE</button>
+            <p class="hint">Tap SPACE to Hop</p>
+        </div>
+
+        <div id="game-over-screen" class="overlay" style="display: none;">
+            <h1 class="status">CRASHED!</h1>
+            <div class="stats-box">
+                <p>DISTANCE</p>
+                <h2 id="final-score">0</h2>
+                <p>BEST</p>
+                <h2 id="best-score">0</h2>
+            </div>
+            <button id="restart-btn" class="main-btn">RETRY</button>
+        </div>
+    </div>
+    <script src="flappycar.js"></script>
+</body>
+</html>

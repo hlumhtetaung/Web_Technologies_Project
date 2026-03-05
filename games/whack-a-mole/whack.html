@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack a Knight</title>
+    <link rel="stylesheet" href="mole.css">
+    <script src="mole.js" defer></script>
+</head>
+
+<body>
+
+    <div class="game-container">
+        <h1>Whack a Knight</h1>
+
+        <div class="stats-bar">
+            <h2>Score: <span id="score">0</span></h2>
+            <h2>Time: <span id="timer">30</span>s</h2>
+        </div>
+
+        <div id="board-container">
+            <div id="board"></div>
+
+            <div id="overlay">
+                <h2 id="status-text">Ready for Battle?</h2>
+                <button id="start-btn">BEGIN QUEST</button>
+                <button id="help-btn">How to Play</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="help-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>The Knight's Code</h3>
+            <hr>
+            <p>⚔️ <b>Whack the Knight:</b> Click them for +10 points.</p>
+            <p>🛡️ <b>Avoid the Shield:</b> Clicking a shield ends the game!</p>
+            <p>⏱️ <b>The Clock:</b> Score as much as you can in 30 seconds.</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

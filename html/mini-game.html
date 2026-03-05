@@ -43,19 +43,51 @@
         <h2>Mini-Games</h2>
         <div class="mini-games">
             <div class="game-card">
-                <img src="../images/tictactoe.png" alt="Tic Tac Toe Icon" class="game-icon">
+                <iframe id="game-viewport" src="" frameborder="0" class="game-icon"></iframe>
             </div>
             <div class="game-card">
-                <img src="../images/wordle.png" alt="Wordle Icon" class="game-icon">
+                <a href="mini-game.html?game=wordle"><img src="../images/wordle.png" alt="Wordle Icon" class="game-icon"></a>
             </div>
             <div class="game-card">
-                <img src="../images/whack.png" alt="Whack-a-Mole Icon" class="game-icon">
+                <a href="mini-game.html?game=whack"><img src="../images/whack.png" alt="Whack-a-Mole Icon" class="game-icon"></a>
             </div>
             <div class="game-card">
-                <img src="../images/reaction.png" alt="Reaction Test" class="game-icon">
+                <a href="mini-game.html?game=reaction"><img src="../images/reaction.png" alt="Reaction Test" class="game-icon"></a>
             </div>
         </div>
     </div>
+
+    <div class="gallery-section">
+            <h3 class="gallery-title">More Games</h3>
+            <div class="game-gallery">
+                <div class="gallery-item">
+                    <a href="mini-game.html?game=tictactoe">
+                        <a href="mini-game.html?game=tictactoe"><img src="../images/tictactoe.png" alt="Tic Tac Toe Icon" class="game-icon">
+                        <span>Tic Tac Toe</span>
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="mini-game.html?game=sudoku">
+                        <a href="mini-game.html?game=sudoku"><img src="../images/sudoku.png" alt="Sudoku Icon" class="game-icon">
+                        <span>Sudoku</span>
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="mini-game.html?game=flappycar">
+                        <a href="mini-game.html?game=flappycar"><img src="../images/flappycar.png" alt="Flappy Car Icon" class="game-icon">
+                        <span>Flappy Car</span>
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="mini-game.html?game=memorycard">
+                        <a href="mini-game.html?game=memorycard"><img src="../images/back.png" alt="Memory Card Icon" class="game-icon">
+                        <span>Memory Card</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div> 
+
 
     <footer class="footer">
         <div class="footer-container">
@@ -99,6 +131,31 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Dictionary mapping keys to file paths
+        const gamePaths = {
+            'tictactoe': '../games/tictactoe/tictactoe.html',
+            'wordle': '../games/wordle/wordle.html',
+            'whack': '../games/whack/whack.html',
+            'reaction': '../games/reactionspeed/reaction.html',
+            'sudoku': '../games/sudoku/sudoku.html',
+            'flappycar': '../games/flappycar/flappycar.html',
+            'memorycard': '../games/memorycard/memorycard.html'
+        };
+
+        // Get the game name from the link query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const gameKey = urlParams.get('game');
+        const iframe = document.getElementById('game-viewport');
+
+        // Load the matching game from the link parameter or show error
+        if (gameKey && gamePaths[gameKey]) {
+            iframe.src = gamePaths[gameKey];
+        } else {
+            alert('Invalid game selection. Please go back and choose a valid game.');
+        }
+    </script>
 </body>
 
 </html>

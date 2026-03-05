@@ -51,3 +51,78 @@
         height: 220px;
     }
 }
+
+/* Ensure the iframe fills the card container */
+#game-viewport {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Container for the whole new section */
+.gallery-section {
+    width: 80%;
+    margin: 40px auto 60px;
+}
+
+.gallery-title {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    border-left: 4px solid #3B82F6;
+    padding-left: 15px;
+}
+
+/* The Flexbox wrapper */
+.game-gallery {
+    display: flex;
+    flex-wrap: wrap;       /* Allows wrapping to next line */
+    gap: 20px;            /* Space between items */
+    justify-content: flex-start; /* Aligns items to the left */
+}
+
+/* Individual Game Item */
+.gallery-item {
+    flex: 0 0 200px;      /* Don't grow, don't shrink, stay 200px wide */
+    background: var(--bg-surface);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 140px;        /* Fixed height for the image part */
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item span {
+    display: block;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustment for mobile */
+@media (max-width: 600px) {
+    .gallery-section {
+        width: 95%;
+    }
+    .gallery-item {
+        flex: 1 0 140px; /* Let items grow slightly on very small screens */
+    }
+}

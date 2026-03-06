@@ -1,0 +1,116 @@
+/* General Styles & Dark Mode Theme */
+:root {
+    --bg-color: #121213;
+    --text-color: #ffffff;
+    --border-color: #3a3a3c;
+    --correct: #538d4e;
+    --present: #b59f3b;
+    --absent: #3a3a3c;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+    text-align: center;
+}
+
+/* Grid Layout */
+#board {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+}
+
+.tile {
+    width: 58px;
+    height: 58px;
+    border: 2px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Colors for game logic */
+.tile.correct {
+    background-color: var(--correct);
+    border: none;
+}
+
+.tile.present {
+    background-color: var(--present);
+    border: none;
+}
+
+.tile.absent {
+    background-color: var(--absent);
+    border: none;
+}
+
+/* Keyboard Styles */
+#keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.key-row {
+    display: flex;
+    gap: 6px;
+}
+
+.key {
+    background-color: #818384;
+    border-radius: 4px;
+    padding: 15px 12px;
+    cursor: pointer;
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
+}
+
+/* Modal Popup */
+.hidden {
+    display: none !important;
+}
+
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+}

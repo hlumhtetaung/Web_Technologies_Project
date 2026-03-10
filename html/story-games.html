@@ -40,26 +40,29 @@
     </header>
 
     <main class="main-content">
-        <section class="game-view">
-            <div class="game-card-large">
-                <div class="game-image-container">
-                    <img src="../images/reply.png" alt="An Apology Stickman Game" class="main-game-img">
-                </div>
-            </div>
-        </section>
-
-        <section class="next-game-strip">
-            <a href="next-game.html" class="strip-content">
-                <span class="strip-label">Next Story</span>
-                <div class="strip-flex">
-                    <img src="../images/apology.png" alt="An Apology Game Thumbnail" class="strip-thumb">
-                    <div class="strip-text">
-                        <h3>An Apology</h3>
-                        <p>Start a new journey &rarr;</p>
+        <main class="main-content">
+            <section class="game-view">
+                <div class="game-card-large">
+                    <div class="game-image-container">
+                        <iframe id="story-viewport" src="" frameborder="0" class="main-game-iframe"
+                            allowfullscreen></iframe>
                     </div>
                 </div>
-            </a>
-        </section>
+            </section>
+
+            <section class="next-game-strip">
+                <a href="story-games.html?game=apology" class="strip-content">
+                    <span class="strip-label">Next Story</span>
+                    <div class="strip-flex">
+                        <img src="../images/apology.png" alt="An Apology" class="strip-thumb">
+                        <div class="strip-text">
+                            <h3>An Apology</h3>
+                            <p>Start this story &rarr;</p>
+                        </div>
+                    </div>
+                </a>
+            </section>
+        </main>
     </main>
 
     <footer class="footer">
@@ -104,6 +107,24 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const storyPaths = {
+            'reply': '../games/reply/reply.html',
+            'apology': '../games/apology/apology.html',
+            'quest': '../games/quest/quest.html'
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const storyKey = urlParams.get('game');
+        const iframe = document.getElementById('story-viewport');
+
+        if (storyKey && storyPaths[storyKey]) {
+            iframe.src = storyPaths[storyKey];
+        } else {
+            iframe.src = storyPaths['reply'];
+        }
+    </script>
 </body>
 
 </html>

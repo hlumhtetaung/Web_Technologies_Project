@@ -38,7 +38,7 @@ A message from someone you haven't spoken to in years.
 "Hey... I was thinking about you today."
 
 Your thumb hovers above the screen.`,
-        image: "images/morning.png",
+        image: "../../images/alarm.jpg",
         options: [
             { text: "Reply to the message", next: "reply1" },
             { text: "Ignore it and start your day", next: "ignore1" }
@@ -55,7 +55,7 @@ You finish breakfast and leave for work.
 Outside, the city is already alive.
 
 People rushing. Cars passing. The usual rhythm of life.`,
-        image: "images/city.png",
+        image: "images/image.png",
         options: [
             { text: "Focus on work", next: "work1" },
             { text: "Call another friend instead", next: "call_friend" }
@@ -68,7 +68,7 @@ People rushing. Cars passing. The usual rhythm of life.`,
 Emails. Meetings. Deadlines.
 
 You feel productive... but strangely empty.`,
-        image: "images/work.png",
+        image: "images\Gemini_Generated_Image_ah7u3hah7u3hah7u.png",
         options: [
             { text: "Stay late at work", next: "work2" },
             { text: "Leave early and take a walk", next: "walk1" }
@@ -83,7 +83,7 @@ Career success arrives.
 Promotions. Recognition.
 
 But the quiet evenings grow longer.`,
-        image: "images/office_night.png",
+        image: "https://images.stockcake.com/public/b/b/9/bb93b7aa-7a24-44ff-88ab-1cceb61651a4_large/office-late-night-stockcake.jpg",
         options: [
             { text: "The end of this path.", next: null }
         ]
@@ -95,7 +95,7 @@ But the quiet evenings grow longer.`,
 The wind moves through the trees.
 
 You realize life has been moving too fast.`,
-        image: "images/park.png",
+        image: "https://images.squarespace-cdn.com/content/v1/5bafb638840b162de12e8913/1660645171424-TOSGIQD2TZP0HJFWOWW0/TrailJudarnFinal28WEB.jpeg",
         options: [
             { text: "Sit and think", next: "reflection" },
             { text: "Go home", next: "home_alone" }
@@ -110,7 +110,7 @@ Friends you lost contact with.
 Moments you never revisited.
 
 Maybe some doors shouldn't stay closed forever.`,
-        image: "images/bench.png",
+        image: "https://www.gardenplus.com.hk/cdn/shop/products/garden-benches-no2-143937.jpg?v=1704001375&width=783",
         options: [
             { text: "Send a message after all", next: "reply1" },
             { text: "Accept the silence", next: "home_alone" }
@@ -123,7 +123,7 @@ Maybe some doors shouldn't stay closed forever.`,
 You build a stable routine.
 
 Some nights you wonder how things might have been different.`,
-        image: "images/night.png",
+        image: "https://static.vecteezy.com/system/resources/thumbnails/005/732/461/small/night-time-scene-with-bright-full-moon-at-lake-vector.jpg",
         options: [
             { text: "The end of this story.", next: null }
         ]
@@ -135,7 +135,7 @@ Some nights you wonder how things might have been different.`,
 The conversation turns into laughter.
 
 It reminds you how powerful small connections can be.`,
-        image: "images/friends.png",
+        image: "https://ih1.redbubble.net/image.2825787850.1493/st,small,507x507-pad,600x600,f8f8f8.jpg",
         options: [
             { text: "Meet them tonight", next: "meetup" },
             { text: "Return to your routine", next: "work1" }
@@ -148,7 +148,7 @@ It reminds you how powerful small connections can be.`,
 Stories become plans.
 
 Life slowly grows richer.`,
-        image: "images/dinner.png",
+        image: "https://www.realsimple.com/thmb/cRFZnLYHd9xMHWGvHTCVOgsw1sc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/easy-dinners-RS0225DINN_skillet-ravioli-lasagna-02e4984546f14b1a8630965a11af0131.jpg",
         options: [
             { text: "The end of this story.", next: null }
         ]
@@ -162,7 +162,7 @@ Life slowly grows richer.`,
 The response arrives almost instantly.
 
 Within minutes you're both laughing like old times.`,
-        image: "images/texting.png",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnwl9lnAyb5MkQMI3Ag454LVtB6MCSPGM8JA&s",
         options: [
             { text: "Meet for coffee", next: "coffee" },
             { text: "Keep chatting online", next: "chatting" }
@@ -175,7 +175,7 @@ Within minutes you're both laughing like old times.`,
 Seeing them again feels surreal.
 
 Time didn't erase the connection.`,
-        image: "images/coffee.png",
+        image: "https://insanelygoodrecipes.com/wp-content/uploads/2020/07/Cup-Of-Creamy-Coffee.png",
         options: [
             { text: "Start meeting regularly", next: "relationship1" },
             { text: "Keep things casual", next: "casual_friendship" }
@@ -190,7 +190,7 @@ Late-night talks.
 Shared memories.
 
 The connection grows stronger.`,
-        image: "images/chat.png",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_5O36o8Zy2kq0uleSGJBDrDh96Uq011eDzQ&s",
         options: [
             { text: "Finally meet in person", next: "coffee" },
             { text: "Let the conversation fade", next: "fade" }
@@ -217,7 +217,7 @@ You go to movies.
 Walk through the city.
 
 Share stories late into the night.`,
-        image: "images/city_walk.png",
+        image: "https://www.universalstudioshollywood.com/tridiondata/ush/en/us/files/images/ush-citywalk-universal-hollywood-citywalk-hero-b.jpg",
         options: [
             { text: "Move in together", next: "relationship2" },
             { text: "Stay independent", next: "separate_paths" }
@@ -232,7 +232,7 @@ Friends gather.
 Music plays softly.
 
 All because of one small reply.`,
-        image: "images/wedding.png",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN7wvZ33FpjINw3igTh9IecmYYRzPxP9Aaww&s",
         options: [
             { text: "The end of this story.", next: null }
         ]
@@ -242,7 +242,7 @@ All because of one small reply.`,
         text: `You remain good friends.
 
 Sometimes the best connections don't need labels.`,
-        image: "images/friends2.png",
+        image: "https://static.vecteezy.com/system/resources/previews/035/563/076/non_2x/stick-figure-illustration-stick-man-friendship-pictogram-people-hugging-holding-hands-free-vector.jpg",
         options: [
             { text: "The end of this story.", next: null }
         ]
@@ -252,7 +252,7 @@ Sometimes the best connections don't need labels.`,
         text: `You both choose different directions in life.
 
 But the memory of that reconnection stays meaningful.`,
-        image: "images/path.png",
+        image: "https://thumb.photo-ac.com/bb/bbc62f20a605a3f9ca887b8e70714e29_t.jpeg",
         options: [
             { text: "The end of this story.", next: null }
         ]

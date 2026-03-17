@@ -1,112 +1,176 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>Reaction Speed Test</title>
+    <meta charset="UTF-8">
+    <title>Reaction Speed Test</title>
 
-<style>
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    background: #111;
-    color: white;
-}
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            background: #111;
+            color: white;
+        }
 
-h1 {
-    margin-top: 40px;
-}
+        h1 {
+            margin-top: 40px;
+        }
 
-#gameBox {
-    width: 80%;
-    height: 400px;
-    margin: 40px auto;
-    background: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    cursor: pointer;
-    user-select: none;
-    border-radius: 12px;
-}
+        #gameBox {
+            width: 80%;
+            height: 400px;
+            margin: 40px auto;
+            background: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            cursor: pointer;
+            user-select: none;
+            border-radius: 12px;
+        }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-top: 20px;
-    cursor: pointer;
-}
-</style>
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        /* Modal styles */
+        #modal {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        #modalContent {
+            background: #222;
+            margin: 10% auto;
+            padding: 20px;
+            width: 60%;
+            border-radius: 10px;
+            text-align: left;
+            /* LEFT ALIGNED */
+        }
+
+        #closeBtn {
+            float: right;
+            cursor: pointer;
+            font-size: 20px;
+        }
+    </style>
 </head>
 
 <body>
 
-<h1>Reaction Speed Test</h1>
+    <h1>Reaction Speed Test</h1>
 
-<div id="gameBox">Click Play to start</div>
+    <button onclick="openModal()">How to Play</button>
 
-<h2 id="result"></h2>
-<h3 id="best"></h3>
+    <div id="gameBox">Click Play to start</div>
 
-<button onclick="startGame()">Play</button>
+    <h2 id="result"></h2>
+    <h3 id="best"></h3>
 
-<script>
+    <button onclick="startGame()">Play</button>
 
-let gameBox = document.getElementById("gameBox");
-let result = document.getElementById("result");
-let bestDisplay = document.getElementById("best");
+    <!-- Modal -->
+    <div id="modal">
+        <div id="modalContent">
+            <span id="closeBtn" onclick="closeModal()">✖</span>
+            <h2>How to Play</h2>
+            <p>
+                1. Click the <b>Play</b> button.<br>
+                2. Wait until the box turns <span style="color:lightgreen;">green</span>.<br>
+                3. Click the box as fast as you can when it says <b>CLICK!</b>.<br>
+                4. If you click too early, you lose that round.<br>
+                5. Try to beat your best reaction time!
+            </p>
+        </div>
+    </div>
 
-let startTime = 0;
-let timeoutID;
-let waiting = false;
-let bestTime = null;
+    <script>
 
-gameBox.addEventListener("click", handleClick);
+        let gameBox = document.getElementById("gameBox");
+        let result = document.getElementById("result");
+        let bestDisplay = document.getElementById("best");
 
-function startGame() {
+        let startTime = 0;
+        let timeoutID;
+        let waiting = false;
+        let bestTime = null;
 
-    clearTimeout(timeoutID);
+        gameBox.addEventListener("click", handleClick);
 
-    gameBox.style.background = "red";
-    gameBox.innerText = "Wait for green...";
-    result.innerText = "";
-    waiting = true;
+        function startGame() {
 
-    let randomDelay = Math.floor(Math.random() * 3000) + 2000;
+            clearTimeout(timeoutID);
 
-    timeoutID = setTimeout(() => {
-        gameBox.style.background = "green";
-        gameBox.innerText = "CLICK!";
-        startTime = Date.now();
-        waiting = false;
-    }, randomDelay);
-}
+            gameBox.style.background = "red";
+            gameBox.innerText = "Wait for green...";
+            result.innerText = "";
+            waiting = true;
 
-function handleClick() {
+            let randomDelay = Math.floor(Math.random() * 3000) + 2000;
 
-    if (waiting) {
-        clearTimeout(timeoutID);
-        gameBox.innerText = "Too Soon! Click Play Again";
-        gameBox.style.background = "orange";
-        waiting = false;
-        return;
-    }
-
-    if (gameBox.style.background === "green") {
-        let reactionTime = Date.now() - startTime;
-        result.innerText = "Your time: " + reactionTime + " ms";
-
-        if (bestTime === null || reactionTime < bestTime) {
-            bestTime = reactionTime;
-            bestDisplay.innerText = "Best: " + bestTime + " ms";
+            timeoutID = setTimeout(() => {
+                gameBox.style.background = "green";
+                gameBox.innerText = "CLICK!";
+                startTime = Date.now();
+                waiting = false;
+            }, randomDelay);
         }
 
-        gameBox.innerText = "Click Play Again";
-        gameBox.style.background = "blue";
-    }
-}
+        function handleClick() {
 
-</script>
+            if (waiting) {
+                clearTimeout(timeoutID);
+                gameBox.innerText = "Too Soon! Click Play Again";
+                gameBox.style.background = "orange";
+                waiting = false;
+                return;
+            }
+
+            if (gameBox.style.background === "green") {
+                let reactionTime = Date.now() - startTime;
+                result.innerText = "Your time: " + reactionTime + " ms";
+
+                if (bestTime === null || reactionTime < bestTime) {
+                    bestTime = reactionTime;
+                    bestDisplay.innerText = "Best: " + bestTime + " ms";
+                }
+
+                gameBox.innerText = "Click Play Again";
+                gameBox.style.background = "blue";
+            }
+        }
+
+        /* Modal functions */
+        function openModal() {
+            document.getElementById("modal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+
+        /* Close when clicking outside */
+        window.onclick = function (event) {
+            let modal = document.getElementById("modal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+
+    </script>
 
 </body>
+
 </html>

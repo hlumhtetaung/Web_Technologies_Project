@@ -103,3 +103,21 @@ function setupModal() {
     document.querySelector(".close-btn").onclick = () => modal.style.display = "none";
     window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }
 }
+
+// Play hit sound on whack
+const hitSound = document.getElementById("hit-sound");
+function handleWhack() {
+    if (gameOver) return;
+
+    if (this == currKnightTile) {
+        hitSound.currentTime = 0; 
+        hitSound.play();
+
+        score += 10;
+        document.getElementById("score").innerText = score;
+        currKnightTile.innerHTML = "";
+        currKnightTile = null; // Good practice to clear the reference
+    } else if (this == currShieldTile) {
+        endGame("YOU HIT THE SHIELD!");
+    }
+}

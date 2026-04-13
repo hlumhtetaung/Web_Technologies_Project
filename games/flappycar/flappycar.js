@@ -137,3 +137,21 @@ function draw() {
 
     context.restore();
 }
+
+// Theme Song
+const themeMusic = document.getElementById("theme-music");
+
+function resetGame() {
+    if (themeMusic.paused) {
+        themeMusic.play().catch(e => console.log("Audio waiting for user interaction"));
+    }
+    
+    gameState = "PLAYING";
+    car.y = boardHeight / 2;
+    car.v = 0;
+    pipes = [];
+    score = 0;
+    document.getElementById("score-hud").innerText = "0";
+    document.getElementById("home-screen").style.display = "none";
+    document.getElementById("game-over-screen").style.display = "none";
+}
